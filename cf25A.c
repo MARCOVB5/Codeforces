@@ -1,27 +1,38 @@
 //IQ test
 
 #include <stdio.h>
+#define n_max 101
 
 int main(){
-	int n, num, evenss; 
+	int v[n_max];
+	int n;
+	int count_even = 0,
+		count_odd = 0;
+
 	scanf("%d", &n);
-	scanf("%d", &num);
-	if (num%2 == 0)
-		evenss = 1; 
-	else
-		evenss = 0;
 	
-	int aux = evenss;
-	int i = 0;
-
-	while (aux == evenss && i<n){
-		scanf("%d", &num);
-		if (num%2 == 0)
-			aux = 1;
+	for (int i = 0; i<n; i++){
+		scanf("%d", &v[i]);
+		if (v[i]%2 == 0)
+			count_even++;
 		else
-			aux = 0;
-		i++;}
+			count_odd++;}
 
-	printf("%d\n", i+1);
+	if (count_even > count_odd){
+		int j = 0;
+		while (j<n){
+			if (v[j]%2 != 0){
+				printf("%d\n", j+1);
+				break;}
+			j++;}}
 
-	return 0;}		
+	else{
+		int j = 0; 
+		while (j<n){
+			if (v[j]%2 == 0){
+				printf("%d\n", j+1);
+				break;}
+			j++;}}
+
+	return 0;}
+	
