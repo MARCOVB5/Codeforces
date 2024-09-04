@@ -11,9 +11,12 @@ int main(){
 
 	for (int i = 0; i<t; i++){
 		
-		scanf("%d", &a, &b);
+		scanf("%d %d", &a, &b);
+
+		if (a%b == 0)
+			printf("%d\n", 0);
 		
-		if (a < b)
+		else if (a < b)
 			printf("%d\n", b-a);
 
 		else if (a >= b)
